@@ -14,5 +14,4 @@ class Product < ActiveRecord::Base
 		"#{name} - (#{formatted_price})"
 	end
 
-
 end
