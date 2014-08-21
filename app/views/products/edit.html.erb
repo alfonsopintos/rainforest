@@ -1,4 +1,7 @@
 <h1>Editing product</h1>
+<%= form_for @product, :url => products_path, :html => { :multipart => true } do |form| %>
+  <%= form.file_field :avatar %>
+<% end %>
 
 <%= render 'form' %>
 

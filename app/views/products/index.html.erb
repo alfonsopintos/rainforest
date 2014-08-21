@@ -1,11 +1,12 @@
-<h1>Listing products</h1>
+<h1>Listing Products</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
+      <th></th>
       <th>Description</th>
-      <th>Product Details</th>
+      <!-- <th>Product Details</th> -->
       <th>Price</th>
       <th colspan="3"></th>
     </tr>
@@ -15,8 +16,9 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.name %></td>
+        <td><%= image_tag product.avatar.url(:thumb) %></td>
         <td><%= product.description %></td>
-        <td><%= product.details %> </td>
+      <!--   <td><%= product.details %> </td> -->
         <td>$<%= product.formatted_price %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
@@ -25,8 +27,6 @@
     <% end %>
   </tbody>
 </table>
-
-
 
 <br>
 

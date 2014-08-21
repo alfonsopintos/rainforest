@@ -17,7 +17,10 @@
 
 <p>
   <%= image_tag @product.image %>
-</p>
+</p> 
+  
+  <%= image_tag @product.avatar.url(:thumb) %>
+
 
 <p>
   <strong>Price in cents:</strong>
@@ -32,7 +35,7 @@
 <% end %>
 <br>
 
-<h3>New review</h3>
+<h3>New Review</h3>
 
 <%= render 'reviews/form' %>
 
