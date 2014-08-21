@@ -12,13 +12,18 @@
     </tr>
   </thead>
 
+<!-- Disabled product details on index page, too much clutter. Product details only enabled in product show page. -->
   <tbody>
     <% @products.each do |product| %>
       <tr>
         <td><%= product.name %></td>
         <td><%= image_tag product.avatar.url(:thumb) %></td>
         <td><%= product.description %></td>
+<<<<<<< HEAD
       <!--   <td><%= product.details %> </td> -->
+=======
+        <!-- <td><%= product.details %> </td> -->
+>>>>>>> df8d84aeedfc3f3f87a9c0ad969bba525114b106
         <td>$<%= product.formatted_price %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
@@ -26,6 +31,7 @@
       </tr>
     <% end %>
   </tbody>
+
 </table>
 
 <br>
