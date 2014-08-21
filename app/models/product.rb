@@ -13,4 +13,21 @@ class Product < ActiveRecord::Base
 	def to_s
 		"#{name} - (#{formatted_price})"
 	end
+
+### [1] Added search method to model 
+
+	def self.search(search)
+		if search
+			#where(name: '%#{search}%')
+			where('name LIKE ? OR description LIKE ?', search, search)
+		#elsif search.is_a? = only_integer
+		#	where('formatted_price LIKE ?', search)
+		else
+			all
+		end
+	end
+
+### [1] End Added 
+
+
 end

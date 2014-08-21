@@ -29,6 +29,15 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 
+	<!--[3] Added...this thing. Dunno what it does? -->
+
+   <%= form_tag products_path, :method => 'get' do %>
+      <%= search_field_tag :search, params[:search]%>
+      <%= submit_tag "Search", name: nil %>
+    <% end %>
+
+	<!--[3] End Added -->
+
 <%= yield %>
 
 </body>

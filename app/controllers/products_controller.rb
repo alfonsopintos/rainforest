@@ -3,9 +3,14 @@ class ProductsController < ApplicationController
 
   # GET /products
   # GET /products.json
+
+
+    # [2] Added search action to controller
   def index
-    @products = Product.all
+    @products = Product.search(params[:search])
   end
+    # [2] End Added
+
 
   # GET /products/1
   # GET /products/1.json
@@ -72,4 +77,6 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :description, :price_in_cents, :details, :image)
     end
+
+
 end
