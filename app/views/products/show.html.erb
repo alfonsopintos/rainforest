@@ -1,5 +1,7 @@
 <!-- <p id="notice"><%= notice %></p> -->
 
+
+
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -14,10 +16,8 @@
   <strong>Product Details:</strong>
   <%= @product.details %>
 </p>
-
-<p>
-  <%= image_tag @product.image %>
-</p>
+  
+  <%= image_tag @product.avatar.url(:thumb) %>
 
 <p>
   <strong>Price in cents:</strong>
@@ -32,9 +32,9 @@
 <% end %>
 <br>
 
-<h3>New review</h3>
+<h3>New Review</h3>
 
 <%= render 'reviews/form' %>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Edit', edit_product_path(@product) %> 
 <%= link_to 'Back', products_path %>

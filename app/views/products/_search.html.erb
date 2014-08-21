@@ -1,14 +1,5 @@
-<!--- Created a partial for search -!>
-
-<! [3] Added a search field -->
-
-<% form_tag :controller => 'products', :action => 'search', :method => 'get' do %>
+<!--<% form_tag :controller => 'products', :action => 'search', :method => 'get' do %>
   <%= text_field_tag :search, params[:search], :id => 'search_field' %>
     <%= submit_tag "Search", :name => nil %>
     <%= link_to "Clear", "('search_field').clear()"%>
-<% end %>
-
-<!-- End Added -->
-
-
-<!--- End partial -!>
+<% end %> -->
