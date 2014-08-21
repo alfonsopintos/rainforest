@@ -13,4 +13,6 @@ class Product < ActiveRecord::Base
 	def to_s
 		"#{name} - (#{formatted_price})"
 	end
+
+
 end
