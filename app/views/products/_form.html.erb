@@ -30,8 +30,12 @@
   </div>
   
   <div class="field">
-    <%= f.label :price_in_cents %><br>
-    <%= f.number_field :price_in_cents %>
+    <%= f.label "Price" %><br>
+    <% if @product.price_in_cents.nil? %>
+    <%= f.number_field :price_in_cents, step:"any", value:"0.00" %>   
+    <% else %>
+    <%= f.number_field :price_in_cents, step:"any", value:"#{@product.formatted_price}" %>  
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>
