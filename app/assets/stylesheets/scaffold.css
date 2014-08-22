@@ -93,8 +93,26 @@ div.field, div.actions {
     border-radius: 4px;
     background-color: #C2C2C2;
 }
+
 .product_listing {
-    width: 50%;
+    padding: 1.5%;
+    width: 41.6%;
+    margin: auto;
+}
+
+.search_new_products {
+    padding: 1.5%;
+    width: 31.6%;
+    margin: auto;
+}
+
+.product_padding_add {
+    padding: 1%
+}
+
+.login {
+    padding: 1%;
+    float: right;
     margin: 0 auto;
 }
 
@@ -103,6 +121,9 @@ div.field, div.actions {
     margin: 0 auto;
 }
 
+.center_stuff {;
+   margin: 30%;
+}
 
 /* [8] END |cc| */
 
@@ -162,6 +183,7 @@ p {
 .banner {
     background: transparent url('http://loquetuquierasoir.com/wp-content/uploads/2014/07/repeating-wood-grain-backgroundcss-background-image---using-an-image---stack-overflow-zcaoan3e.png') 0 0 no-repeat fixed;
     text-align: center;
+    font-size: 2em;
     background-size: cover;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://loquetuquierasoir.com/wp-content/uploads/2014/07/repeating-wood-grain-backgroundcss-background-image---using-an-image---stack-overflow-zcaoan3e.png', sizingMethod='scale');
 
@@ -191,21 +213,21 @@ p {
  .information {
     max-width: 980px;
     margin: 0 auto;
- }
-.pricing-tables {
+  }
+  .pricing-tables {
     margin-bottom: 3.125em;
     text-align: center;
-}
+  }
 
 /*
  * -- PRICING TABLE  --
  * Every pricing table has the .pricing-table class
  */
-.pricing-table {
+  .pricing-table {
     border: 1px solid #ddd;
     margin: 0 0.5em 2em;
     padding: 0 0 3em;
-}
+  }
 
 /*
  * -- PRICING TABLE HEADER COLORS --
