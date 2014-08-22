@@ -44,6 +44,7 @@ gem "paperclip", "~> 4.1"
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
-
+gem 'httparty'
+gem 'unirest'
 
 

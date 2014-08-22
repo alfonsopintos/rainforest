@@ -68,6 +68,17 @@ class ProductsController < ApplicationController
     end
   end
 
+  def barcode
+    require 'unirest'
+    upc = params[:barcode]
+
+    response = Unirest.get "https://community-outpan.p.mashape.com/get_product.php?barcode=#{upc}",
+         
+    headers:{
+          "X-Mashape-Key" => "L90l5rQA7smshIUnQLnW4YYUc3kzp1VZhEZjsnUq2OaaQJwhol"}
+      format.json { head response.body }
+    end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
@@ -80,6 +91,7 @@ class ProductsController < ApplicationController
       params[:product][:price_in_cents] = params[:product][:price_in_cents].to_f * 100
       params.require(:product).permit(:name, :description, :price_in_cents, :details, :avatar)
     end
+
 
 
 end
