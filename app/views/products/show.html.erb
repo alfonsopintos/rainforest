@@ -20,9 +20,24 @@
   <%= image_tag @product.avatar.url(:thumb) %>
 
 <p>
-  <strong>Price in cents:</strong>
+  <strong>Price:</strong>
   $<%= @product.formatted_price %>
 </p>
+
+
+<%= form_tag charges_path do %>
+  <article>
+    <label class="amount">
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description=<%=@product.name%>
+          data-amount= "<%=@product.price_cents%>"> </script>
+          <%= hidden_field_tag 'product', @product.id %>
+<% end %>
+
 
 <h3> Reviews </h3>
 <% @product.reviews.each do |review| %>
