@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :charges
+  get 'upc/:barcode' => 'products#barcode'
 
   #root to 'home#index'
 

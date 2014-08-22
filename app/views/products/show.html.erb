@@ -17,14 +17,14 @@
   <%= @product.details %>
 </p>
   
-  <%= image_tag @product.avatar.url(:thumb) %>
+  <%= image_tag @product.avatar.url(:medium) %>
 
 <p>
   <strong>Price:</strong>
   $<%= @product.formatted_price %>
 </p>
 
-
+<div>
 <%= form_tag charges_path do %>
   <article>
     <label class="amount">
@@ -37,12 +37,13 @@
           data-amount= "<%=@product.price_cents%>"> </script>
           <%= hidden_field_tag 'product', @product.id %>
 <% end %>
-
+</div>
 
 <h3> Reviews </h3>
 <% @product.reviews.each do |review| %>
 	<p>  <%= review.comment %> </p>
-	<p>Reviewed: <%= time_ago_in_words(review.created_at) %> ago</p>
+  <p>Reviewed By: <%= current_user.email %> : <%= time_ago_in_words(review.created_at) %> ago </p>
+  <hr>
 
 <% end %>
 <br>
