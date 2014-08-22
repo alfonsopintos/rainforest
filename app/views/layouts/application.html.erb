@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Rainforest</title>
+	<title> BUY ONLINE </title>
+
+	<!-- [4] Pure CSS Insert |cc| -->
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+	<link rel="stylesheet" href="css/layouts/pricing.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- [4] End |cc| -->
+
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
+
 </head>
+
 <body>
 
 	<p class="navbar-text pull-right">
-
 
 		<% if user_signed_in? %>
 		Logged in as <strong><%= current_user.email %></strong>.
@@ -20,17 +30,12 @@
 		<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 		<% end %>
 
-
-
 		<% if notice %>
 		<p class="alert alert-success"><%= notice %></p>
 		<% end %>
 		<% if alert %>
 		<p class="alert alert-danger"><%= alert %></p>
 		<% end %>
-
-
-	
 
 		<%= yield %>
 

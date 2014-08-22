@@ -5,11 +5,11 @@ class ProductsController < ApplicationController
   # GET /products.json
 
 
-    # [2] Added search action to controller
+  # [2] Added search action to controller |cc|
   def index
     @products = Product.search(params[:search])
   end
-    # [2] End Added
+  # [2] End |cc|
 
 
   # GET /products/1
@@ -48,7 +48,9 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        # [6] Interpolated instance var so that name shows up in message |cc|
+        format.html { redirect_to @product, notice: "#{@product} was successfully updated." }
+        # [6] End |cc|
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit }
@@ -59,13 +61,19 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1
   # DELETE /products/1.json
+
+
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      # [6] Changed 'Destroy' to 'Remove' + changed index view |cc|
+      # [6] Interpolated instance var so that name shows up in message |cc|
+      format.html { redirect_to products_url, notice: "#{@product} was successfully removed." }
+      # [6] End |cc|
       format.json { head :no_content }
     end
   end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
