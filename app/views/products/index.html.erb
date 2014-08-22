@@ -23,6 +23,8 @@
 </div>
 -[5] End |cc| -->
 
+<%= link_to 'New Product', new_product_path, class: 'pure-button button-secondary'%>
+
 <div class="product_listing">
 <table class="pure-table pure-table-horizontal">
   <thead>
@@ -43,10 +45,10 @@
         <td><%= image_tag product.avatar.url(:thumb) %></td>
         <td><%= product.description %></td>
         <td>$<%= product.formatted_price %></td>
-        <td><%= link_to 'Show', product, class: 'pure-button button-show_edit'%></td>
-        <td><%= link_to 'Edit', edit_product_path(product), class: 'pure-button button-show_edit' %></td>
+        <td><%= link_to 'View', product, class: 'pure-button button-show_edit'%></td>
+        <!--<td><%= link_to 'Edit', edit_product_path(product), class: 'pure-button button-show_edit' %></td> -->
 
-        <td><%= link_to 'Remove', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'pure-button button-remove'%></td>
+        <!-- <td><%= link_to 'Remove', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'pure-button button-remove'%></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -87,7 +89,7 @@
 
 <br>
 <div class="product_listing">
-<%= link_to 'New Product', new_product_path, class: 'pure-button button-secondary'%>
-<%= link_to "Products", products_path, class: 'pure-button button-secondary'%>
+
+<%= link_to "Back To Top", products_path, class: 'pure-button button-secondary'%>
 </div>
 
