@@ -24,8 +24,7 @@ class Product < ActiveRecord::Base
 	end
 
 
-### [1] Added search method to model 
-
+	# [1] Added search method to model |cc|
 	def self.search(search)
 		unless search.blank?
 			search = "%#{search}%"
@@ -36,8 +35,7 @@ class Product < ActiveRecord::Base
 			all
 		end
 	end
-
-### [1] End Added 
+	# [1] End |cc| 
 
 
 end

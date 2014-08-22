@@ -2,35 +2,39 @@
 
 
 
-<h1>Listing Products</h1>
+<div class="banner"><h1 class="banner-head">Product Listing</h1></div>
 
-<div>
-<!---[3] Added...this thing. Dunno what it does? -->
+<div class="search_button">
 
+  <!---[3] Added...this thing. Dunno what it does? But it works |cc| -->
   <%= form_tag products_path, :method => 'get' do %>
-      <%= search_field_tag :search, params[:search]%>
-      <%= submit_tag "Search", name: nil %>
-    <% end %>
+    <%= search_field_tag :search, params[:search]%>
+    <%= submit_tag "Search", class: 'pure-button', name: nil %>
+  <% end %>
+  <!--[3] End |cc| -->
 
-  <!--[3] End Added : MOVED TO INDEX.HTML -->
 </div>
 
-<table>
+  <!---[5] Test pureCSS |cc|  
+<div class="pure-g">
+    <div class="pure-u-1-3"><p>Thirds</p></div>
+    <div class="pure-u-1-3"><p>Thirds</p></div>
+    <div class="pure-u-1-3"><p>Thirds</p></div>
+</div>
+-[5] End |cc| -->
+
+<div class="product_listing">
+<table class="pure-table pure-table-horizontal">
   <thead>
     <tr>
       <th>Name</th>
       <th></th>
       <th>Description</th>
-      <!-- <th>Product Details</th> -->
       <th>Price</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
-
-
-
-<!-- Disabled product details on index page, too much clutter. Product details only enabled in product show page. -->
 
   <tbody>
     <% @products.each do |product| %>
@@ -38,20 +42,52 @@
         <td><%= product.name %></td>
         <td><%= image_tag product.avatar.url(:thumb) %></td>
         <td><%= product.description %></td>
-      <!--   <td><%= product.details %> </td> -->
-        <!-- <td><%= product.details %> </td> -->
         <td>$<%= product.formatted_price %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', product, class: 'pure-button button-show_edit'%></td>
+        <td><%= link_to 'Edit', edit_product_path(product), class: 'pure-button button-show_edit' %></td>
+
+        <td><%= link_to 'Remove', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'pure-button button-remove'%></td>
       </tr>
     <% end %>
   </tbody>
 
 </table>
+</div>
+
+<!-- TABLE TEST
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= image_tag product.avatar.url(:thumb) %></td>
+        <td><%= product.description %></td>
+        <td>$<%= product.formatted_price %></td>
+        <td><%= link_to 'Show', product, class: 'pure-button button-show_edit'%></td>
+        <td><%= link_to 'Edit', edit_product_path(product), class: 'pure-button button-show_edit' %></td>
+
+        <td><%= link_to 'Remove', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'pure-button button-remove'%></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+-->
 
 <br>
-
-<%= link_to 'New Product', new_product_path %>
-<%= link_to "Products", products_path %>
+<div class="product_listing">
+<%= link_to 'New Product', new_product_path, class: 'pure-button button-secondary'%>
+<%= link_to "Products", products_path, class: 'pure-button button-secondary'%>
+</div>
 
