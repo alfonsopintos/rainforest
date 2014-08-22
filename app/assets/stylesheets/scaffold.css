@@ -96,13 +96,13 @@ div.field, div.actions {
 
 .product_listing {
     padding: 1.5%;
-    width: 41.6%;
+    width: 32.6%;
     margin: auto;
 }
 
 .search_new_products {
     padding: 1.5%;
-    width: 31.6%;
+    width: 27.6%;
     margin: auto;
 }
 
@@ -124,6 +124,11 @@ div.field, div.actions {
 .center_stuff {;
    margin: 30%;
 }
+
+.formfix {
+  width: 10%;
+}
+
 
 /* [8] END |cc| */
 
