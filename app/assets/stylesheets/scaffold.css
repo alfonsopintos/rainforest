@@ -79,7 +79,12 @@ div.field, div.actions {
 }
 
 .button-secondary {
-    background: #B2E092; /* this is a light blue */
+    background: #B2E092; /* this is a light green */
+}
+
+.button-update {
+    background: #B2E092; /* this is a light green */
+    margin: 1%;
 }
 
 .button-remove {
@@ -114,6 +119,7 @@ div.field, div.actions {
     padding: 1%;
     float: right;
     margin: 0 auto;
+    background-color: #FFFFFF;
 }
 
 .search_button {
@@ -129,6 +135,13 @@ div.field, div.actions {
   width: 10%;
 }
 
+.background_test {
+  font-size: 1.5em;
+  padding-top: 20%;
+  padding-bottom: 30%;
+  background: url('http://loquetuquierasoir.com/wp-content/uploads/2014/07/repeating-wood-grain-backgroundcss-background-image---using-an-image---stack-overflow-zcaoan3e.png') 0 0 no-repeat fixed;
+  margin:auto;
+}
 
 /* [8] END |cc| */
 
